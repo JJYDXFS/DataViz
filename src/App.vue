@@ -18,8 +18,11 @@
                 等动画加载完成后，移动到感兴趣的省份上查看那里出身的首辅吧
             </section>
             <section class="step">
-                <div class="title" >Four</div>
-                Hello, section four
+                <div class="title" >Part4 学历桑基图</div>
+                首辅作为明代文官之路的巅峰，是学而优则仕的最佳体现<br/>
+                在明代，科举制度自下而上分为三层<br/>
+                通过殿试的考生将依名次被分别授予<br/>
+                一甲、二甲和三甲的出身
             </section>
             <section class="step">
                 <div class="title" >Five</div>
@@ -39,6 +42,7 @@ import {scroller} from '../src/js/scroller.js'
 import Title from './components/Title.vue'
 import Scatter from './components/Scatter.vue'
 import HomeMap from './components/HomeMap.vue'
+import OriginSankey from './components/OriginSankey.vue'
 
 import * as d3 from 'd3';
 
@@ -53,6 +57,7 @@ export default {
     Scatter,
     Title,
     HomeMap,
+    OriginSankey,
     // Wordcloud
   },
   data(){
@@ -70,7 +75,7 @@ export default {
       activateFunctions[0] = this.showTitle;
       activateFunctions[1] = this.showScatter;
       activateFunctions[2] = this.showHomeMap;
-      activateFunctions[3] = this.showTitle;
+      activateFunctions[3] = this.showOriginSankey;
       activateFunctions[4] = this.showTitle;
       activateFunctions[5] = this.showTitle;
   },
@@ -115,6 +120,9 @@ export default {
       },
       showHomeMap(){
           this.comName = "HomeMap";
+      },
+      showOriginSankey(){
+          this.comName = "OriginSankey";
       }
   }
 }
