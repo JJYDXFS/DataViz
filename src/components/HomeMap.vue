@@ -113,7 +113,7 @@ export default defineComponent({
                 let temp_province = d.properties.name;
                 let amount = final_data[temp_province];
                 let detail_info = map_data[temp_province];
-                let tip_height = 80 + 20*(amount-1);
+                let tip_height = 60 + 20*(amount-1);
                 
                 map_tooltip.style("opacity", 1);
 
@@ -256,7 +256,7 @@ div.map_tooltip {
     position: absolute;			
     text-align: center;			
     width: 160px;					
-    /* height: 100px;					 */
+    height: 80px;					
     padding: 2px;				
     font: 12px sans-serif;
     line-height: 20px;	
