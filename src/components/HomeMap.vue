@@ -20,12 +20,13 @@ export default defineComponent({
                     homeMap.drawMap(res,map_res);
                 });
         })
-            
-        
     },
     methods:{
         /**
-         * 绘制籍贯地图
+         * drawMap - 绘制籍贯地图
+         * @date 2021-06-02
+         * @param res - 籍贯信息数据
+         * @param map_data - 地图geojson数据
          */
         drawMap(res,map_data){
             // 有关svg的数据

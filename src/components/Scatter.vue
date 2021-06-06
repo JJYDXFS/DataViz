@@ -8,6 +8,7 @@ import * as d3 from "d3";
 
 export default defineComponent({
     data(){
+        return {}
     },
     mounted(){
         var scatter=this;
@@ -18,7 +19,9 @@ export default defineComponent({
 
     methods:{
         /**
-         * 绘制散点图
+        * drawScatter - 绘制散点图
+         * @date 2021-06-01
+         * @param data - 任职表数据
          */
         drawScatter(data){
             // 有关svg的数据

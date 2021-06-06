@@ -20,8 +20,10 @@ export default defineComponent({
 
   methods:{
     /**
-     * 绘制桑基图
+     * drawSankey - 绘制桑基图
      * https://bl.ocks.org/d3noob/06e72deea99e7b4859841f305f63ba85
+     * @date 2021-06-03
+     * @param data - 学历数据
      */
     drawSankey(data){
         // 有关svg的数据
