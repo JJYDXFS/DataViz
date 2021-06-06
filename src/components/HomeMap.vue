@@ -196,7 +196,7 @@ export default defineComponent({
                     })
             };
             // 定时器
-            let time = 0;
+            let time = 1;
             let title = d3.select("#map")
                 .append("text")
                 .attr("id","title")
@@ -218,8 +218,11 @@ export default defineComponent({
                 }
             }, 1500);
         },
+        /**
+         * 获取事件函数，用于禁止子事件冒泡
+         * https://blog.csdn.net/ming199481/article/details/81505367
+         */
         getEvent(){
-            // 获取事件函数，用于禁止子事件冒泡
             if(window.event){return window.event;}
             var func = getEvent.caller;
             while(func != null){

@@ -3,7 +3,7 @@
  * of figuring out which section
  * the user is currently scrolled
  * to.
- *
+ * https://github.com/vlandham/scroll_demo/blob/gh-pages/js/scroller.js
  */
 import * as d3 from 'd3'
 function scroller() {

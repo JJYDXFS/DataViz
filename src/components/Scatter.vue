@@ -11,7 +11,7 @@ export default defineComponent({
     },
     mounted(){
         var scatter=this;
-        d3.csv("./test1.csv").then(function(data) {
+        d3.csv("./scatter_data.csv").then(function(data) {
             scatter.drawScatter(data);
         });
     },
@@ -153,7 +153,6 @@ export default defineComponent({
                 )
 
             // add axis title
-
             // Y axis label:
             svg.append("text")
                 .attr("text-anchor", "end")
@@ -161,7 +160,6 @@ export default defineComponent({
                 .attr("y", -margin.left+40)
                 .attr("x", -margin.top+10)
                 .text("在任时长（年）")
-
 
             // tooltip
             var scatter_tooltip = d3.select("#my_scatter")

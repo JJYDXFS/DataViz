@@ -1,4 +1,5 @@
 /**
+ * d3v4 桑基图插件
  * https://bl.ocks.org/d3noob/06e72deea99e7b4859841f305f63ba85
  */
 import * as d3 from 'd3v4'

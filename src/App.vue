@@ -78,6 +78,10 @@ export default {
     };
   },
   mounted(){
+      /**
+       * 教程参考
+       * https://vallandingham.me/scroller.html
+       */
       this.initScroller();
       // 当活动section改变时，将调用不同的激活函数
       activateFunctions[0] = this.showTitle;
@@ -106,8 +110,7 @@ export default {
       },
 
       /**
-       * 激活
-       * 
+       * 激活对应的数据可视化图表
        * @param index - 激活部分的下标
       */
       activateViz(index) {

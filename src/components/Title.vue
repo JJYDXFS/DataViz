@@ -53,9 +53,6 @@ export default defineComponent({
             .attr('x', width / 2)
             .attr('y', (height / 3) + (height / 5))
             .text('观察录');
-    
-      // svg.selectAll('.openvis-title')
-      //       .attr('opacity', 0);
     }
   }
 
