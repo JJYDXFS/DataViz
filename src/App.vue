@@ -33,8 +33,14 @@
                 二甲赐进士出身，三甲赐同进士出身<br/>
             </section>
             <section class="step">
-                <div class="title" >Five</div>
-                Hello, section five
+                <div class="title" >Part 5 谥号树图</div>
+                干得好的首辅在死后将会得到来自朝廷的感谢——谥号<br/>
+                明代的首辅大都能得到以“文”字打头的谥号<br/>
+                而历代文官谥号之最莫过于“文正”，相传李东阳在得知自己的谥号会被定为文正后，激动地从病榻起身开始磕头
+            </section>
+            <section class="step">
+                <div class="title" >Part 6</div>
+                Hello, section five?
             </section>
         </div>
         <div id="vis">
@@ -51,6 +57,7 @@ import Title from './components/Title.vue'
 import Scatter from './components/Scatter.vue'
 import HomeMap from './components/HomeMap.vue'
 import OriginSankey from './components/OriginSankey.vue'
+import CirclePacking from './components/CirclePacking.vue'
 
 import * as d3 from 'd3';
 
@@ -66,6 +73,7 @@ export default {
     Title,
     HomeMap,
     OriginSankey,
+    CirclePacking,
     // Wordcloud
   },
   data(){
@@ -88,7 +96,7 @@ export default {
       activateFunctions[1] = this.showScatter;
       activateFunctions[2] = this.showHomeMap;
       activateFunctions[3] = this.showOriginSankey;
-      activateFunctions[4] = this.showTitle;
+      activateFunctions[4] = this.showCirclePacking;
       activateFunctions[5] = this.showTitle;
   },
   methods:{
@@ -134,7 +142,10 @@ export default {
       },
       showOriginSankey(){
           this.comName = "OriginSankey";
-      }
+      },
+      showCirclePacking(){
+          this.comName = "CirclePacking";
+      },
   }
 }
 </script>
