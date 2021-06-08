@@ -40,7 +40,7 @@ export default defineComponent({
                         || document.documentElement.clientHeight
                         || document.body.clientHeight;
             // 边距
-            var margin = {top: 10, right: 200, bottom: 60, left: 20},
+            var margin = {top: 10, right: 300, bottom: 60, left: 20},
             width = width*0.87 - margin.left - margin.right,
             height = height*0.9 - margin.top - margin.bottom;
             // svg

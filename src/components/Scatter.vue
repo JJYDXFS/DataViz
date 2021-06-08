@@ -176,16 +176,32 @@ export default defineComponent({
                 .style("padding", "10px")
             
             var mouseover = function(event,d) {
-                scatter_tooltip.style("opacity", 1)}
+                scatter_tooltip.style("opacity", 1);
+                d3.select(this).style("opacity",1);
+            }
     
             var mousemove = function(event,d) {
+                let point_this = this;
+                let point_cx = d3.select(point_this).attr("cx");
+
                 scatter_tooltip
                 .html(d.name+" "+"<br/>"+d.begin_title+"<br/>"+"在任时长："+d.scale+"年")
-                .style("left", (d3.pointer(event,this)[0]+30) + "px") // 90是最佳实践
+                .style("left", function(d){
+                    
+                    if(point_cx < (width-120)){
+                        return (d3.pointer(event,point_this)[0]+30) + "px"
+                    }
+                    else {
+                        return (d3.pointer(event,point_this)[0]-160) + "px"
+                    }
+                    
+                }) // 90是最佳实践
                 .style("top", (d3.pointer(event,this)[1]) + "px")
             }
             
             var mouseleave = function(event,d) {
+                d3.select(this).style("opacity",0.5);
+
                 scatter_tooltip
                 .transition()
                 .duration(200)
