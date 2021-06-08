@@ -50,7 +50,7 @@ export default defineComponent({
         // color
         var color = d3.scaleLinear()
             .domain([0, 5])
-            .range(["hsl(230,80%,80%)", "hsl(120,60%,40%)"])
+            .range(["rgba(89, 181, 246, 0.4)", "rgba(149, 181, 246,0.4)"])
             .interpolate(d3.interpolateHcl);
         // 其他常量
         let focus = root;
@@ -121,7 +121,7 @@ export default defineComponent({
             .join("text")
             .style("fill-opacity", d => d.parent === root ? 1 : 0)
             .style("display", d => d.parent === root ? "inline" : "none")
-            .style("font-size",18)
+            .style("font-size",20)
             .text(d => d.data.name);
 
         zoomTo([root.x, root.y, root.r * 3]);

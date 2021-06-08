@@ -110,8 +110,10 @@ export default defineComponent({
             .enter().append("path")
             .attr("class", "sankey-link")
             .attr("d", path)
+            .style("stroke", function(d){
+                return color(d.source.name.replace(/ .*/, ""));
+            })
             .style("stroke-width", function(d) {
-                // console.log(d);
                 return Math.max(1, d.dy);
             })
             .sort(function(a, b) { return b.dy - a.dy; });
@@ -128,7 +130,6 @@ export default defineComponent({
             .enter().append("g")
             .attr("class", "sankey-node")
             .attr("transform", function(d) { 
-                // console.log(d);
                 return "translate(" + d.x + "," + d.y + ")"; })
             .call(d3.drag()
                 .subject(function(d) {
@@ -170,7 +171,7 @@ export default defineComponent({
 <style>
 .sankey-node rect {
   cursor: move;
-  fill-opacity: .8;
+  fill-opacity: .6;
   shape-rendering: crispEdges;
 }
 
@@ -181,7 +182,7 @@ export default defineComponent({
 
 .sankey-link {
   fill: none;
-  stroke: #000;
+  stroke: rgb(98, 170, 238);
   stroke-opacity: .2;
 }
 

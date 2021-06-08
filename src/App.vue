@@ -173,7 +173,7 @@ export default {
 #vis{
     display: inline-block;
     position: fixed;
-    top: 60px;
+    top: 40px;
     z-index: 1;
     margin-left: 2%;
 
