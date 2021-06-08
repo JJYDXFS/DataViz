@@ -124,6 +124,8 @@ export default defineComponent({
             .style("font-size",20)
             .text(d => d.data.name);
 
+        
+        
         zoomTo([root.x, root.y, root.r * 3]);
     },
   }

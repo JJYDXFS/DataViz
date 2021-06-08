@@ -13,7 +13,7 @@ export default defineComponent({
   },
   mounted(){
     var sankey=this;
-    d3.csv("./data/sankey_67.csv", function(error, data) {
+    d3.csv("./data/sankey_67_order.csv", function(error, data) {
         sankey.drawSankey(data);
     });
   },
@@ -64,6 +64,7 @@ export default defineComponent({
 
         // 初始化结点和边
         var graph = {"nodes" : [], "links" : []};
+        
         // 从数据中导入结点和边
         data.forEach(function (d) {
             graph.nodes.push({ "name": d.source });
@@ -72,6 +73,7 @@ export default defineComponent({
                             "target": d.target,
                             "value": +d.value });
         });
+
         // 只返回不重复的结点
         graph.nodes = d3.keys(d3.nest()
             .key(function (d) { return d.name; })
