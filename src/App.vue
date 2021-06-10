@@ -39,6 +39,10 @@
                 而历代文官谥号之最莫过于“文正”，相传李东阳在得知自己的谥号会被定为文正后，激动地从病榻起身开始磕头
             </section>
             <section class="step">
+                <div class="title" >Part 6 简介雷达图示例</div>
+                Hello, section Six?
+            </section>
+            <section class="step">
                 <div class="title" >Part 6</div>
                 Hello, section five?
             </section>
@@ -58,6 +62,7 @@ import Scatter from './components/Scatter.vue'
 import HomeMap from './components/HomeMap.vue'
 import OriginSankey from './components/OriginSankey.vue'
 import CirclePacking from './components/CirclePacking.vue'
+// import RadarChart from './components/RadarChart.vue'
 
 import * as d3 from 'd3';
 
@@ -74,6 +79,7 @@ export default {
     HomeMap,
     OriginSankey,
     CirclePacking,
+    // RadarChart,
     // Wordcloud
   },
   data(){
@@ -98,6 +104,7 @@ export default {
       activateFunctions[3] = this.showOriginSankey;
       activateFunctions[4] = this.showCirclePacking;
       activateFunctions[5] = this.showTitle;
+      activateFunctions[6] = this.showTitle;
   },
   methods:{
       initScroller(){
@@ -145,6 +152,9 @@ export default {
       },
       showCirclePacking(){
           this.comName = "CirclePacking";
+      },
+      showRadarChart(){
+          this.comName = "RadarChart";
       },
   }
 }
