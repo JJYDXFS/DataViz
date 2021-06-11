@@ -180,7 +180,64 @@ export default defineComponent({
 					.attr("transform","translate("+[width*0.7, height*0.66]+") scale(0.5)")
 					.attr("class","southchinasea");
 		    });
+            // 地图图例
+            // https://bl.ocks.org/duspviz-mit/9b6dce37101c30ab80d0bf378fe5e583
+            var legend_h = 300, legend_w = 50;
 
+            var legend = map_group.append("defs")
+                .append("svg:linearGradient")
+                .attr("id", "gradient")
+                .attr("x1", "100%")
+                .attr("y1", "0%")
+                .attr("x2", "100%")
+                .attr("y2", "100%")
+                .attr("spreadMethod", "pad");
+
+            legend.append("stop")
+                .attr("offset", "0%")
+                .attr("stop-color", "#000000")
+                .attr("stop-opacity", 1);
+
+            legend.append("stop")
+                .attr("offset", "33%")
+                .attr("stop-color", "#555555")
+                .attr("stop-opacity", 1);
+
+            legend.append("stop")
+                .attr("offset", "66%")
+                .attr("stop-color", "#787878")
+                .attr("stop-opacity", 1);
+
+            legend.append("stop")
+                .attr("offset", "100%")
+                .attr("stop-color", "#ffffff")
+                .attr("stop-opacity", 1);
+            // [width*0.7, height*0.66]
+            map_group.append("rect")
+                .attr("width", legend_w - 30)
+                .attr("height", legend_h)
+                .style("fill", "url(#gradient)")
+                .attr("transform", `translate(${width*0.87},${height*0.2})`);
+
+            var y = d3.scaleLinear()
+                .range([300, 0])
+                .domain([0, 10]);
+
+            var yAxis = d3.axisRight()
+                .scale(y)
+                .ticks(5);
+
+            map_group.append("g")
+                .attr("class", "y axis")
+                .attr("transform", `translate(${width*0.87+20},${height*0.2})`)
+                .call(yAxis)
+                .append("text")
+                .attr("transform", "rotate(-90)")
+                .attr("y", 0)
+                .attr("dy", ".71em")
+                // .style("text-anchor", "end")
+                // .text("axis title");
+            // 更新地图函数
             var transitionMap = function(i){
                 mapcolor = dynamic_map_data[i];
                 d3.select("#map").selectAll('path')
@@ -217,7 +274,7 @@ export default defineComponent({
                         .on("mousemove",mousemove)
                         .on("mouseleave",mouseleave);
                 }
-            }, 1500);
+            }, 1000);
         },
         /**
          * 获取事件函数，用于禁止子事件冒泡
@@ -267,5 +324,14 @@ div.map_tooltip {
     border: 0px;	
     border-radius: 8px;			
     pointer-events: none;			
+}
+.axis text {
+  font: 14px sans-serif;
+}
+
+.axis line, .axis path {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
 }
 </style>
