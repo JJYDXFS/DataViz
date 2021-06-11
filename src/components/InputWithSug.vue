@@ -1,23 +1,39 @@
 
 <template>
-<el-row class="demo-autocomplete">
-  <el-col :span="12">
-    <div class="sub-title">通过姓名检索首辅</div>
-    <el-autocomplete
-      class="inline-input"
-      v-model="state1"
-      :fetch-suggestions="querySearch"
-      placeholder="请输入内容"
-      @select="handleSelect"
-    ></el-autocomplete>
-  </el-col>
-</el-row>
+<div id="input_box">
+        <el-row class="demo-autocomplete">
+        <el-col :span="15">
+            <div class="sub-title">通过姓名检索首辅</div>
+            <el-autocomplete
+            class="inline-input"
+            v-model="state1"
+            :fetch-suggestions="querySearch"
+            placeholder="请输入内容"
+            @select="handleSelect"
+            ></el-autocomplete>
+        </el-col>
+        </el-row>
+    </div>
 </template>
 
 <script>
-  import { defineComponent, ref, onMounted } from 'vue'
+import { defineComponent, ref, onMounted } from 'vue'
+import axios from 'axios'
 
 export default defineComponent({
+  data(){
+    return {
+    }
+  },
+  methods:{
+    handleSelect (item) {
+      var thisInstence = this;
+      axios.get("http://localhost:5000/api/get_pm_info",{params:{name:item.value}})
+                .then((res) => {
+                  thisInstence.$parent.$refs.myviz.transRadarChart(res['data']['result']);
+      });
+    },
+  },
   setup() {
     const primer_minister = ref([]);
     const querySearch = (queryString, cb) => {
@@ -55,9 +71,6 @@ export default defineComponent({
         {value: '朱国祯'},
       ];
     };
-    const handleSelect = (item) => {
-      console.log(item);
-    };
     onMounted(() => {
       primer_minister.value = loadAll();
     });
@@ -68,12 +81,12 @@ export default defineComponent({
       querySearch,
       createFilter,
       loadAll,
-      handleSelect,
+      //handleSelect,
     };
   },
 });
 </script>
 
 <style>
-@import url("//unpkg.com/element-plus/lib/theme-chalk/index.css");
+@import 'element-theme-chalk';
 </style>

@@ -16,7 +16,7 @@ export default defineComponent({
         var homeMap=this;
         d3.json("./data/map_data.json").then(function(map_res){
                 d3.json("./map/China.geojson").then(function(res) {
-                    console.log(map_res);
+                    // console.log(map_res);
                     homeMap.drawMap(res,map_res);
                 });
         })

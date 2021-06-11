@@ -6,7 +6,9 @@ import RadarChart from './components/RadarChart.vue'
 
 import './index.css'
 
-createApp(App).mount('#app')
+const app = createApp(App);
+app.use(ElementPlus);
+app.mount("#app");
 
 // // 使用element-ui
 // const app = createApp(RadarChart)

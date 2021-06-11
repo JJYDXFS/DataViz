@@ -40,7 +40,7 @@
             </section>
             <section class="step">
                 <div class="title" >Part 6 简介雷达图示例</div>
-                Hello, section Six?
+                <InputWithSug/>
             </section>
             <section class="step">
                 <div class="title" >Part 6</div>
@@ -49,20 +49,24 @@
         </div>
         <div id="vis">
             <transition mode="out-in">
-                <component v-bind:is="comName"></component>
+                <component v-bind:is="comName" ref="myviz"></component>
             </transition>
         </div>
     </div>
 </template>
 
 <script>
+import {ref} from 'vue'
+
 import {scroller} from '../src/js/scroller.js'
 import Title from './components/Title.vue'
 import Scatter from './components/Scatter.vue'
 import HomeMap from './components/HomeMap.vue'
 import OriginSankey from './components/OriginSankey.vue'
 import CirclePacking from './components/CirclePacking.vue'
-// import RadarChart from './components/RadarChart.vue'
+import RadarChart from './components/RadarChart.vue'
+
+import InputWithSug from './components/InputWithSug.vue'
 
 import * as d3 from 'd3';
 
@@ -79,7 +83,8 @@ export default {
     HomeMap,
     OriginSankey,
     CirclePacking,
-    // RadarChart,
+    RadarChart,
+    InputWithSug,
     // Wordcloud
   },
   data(){
@@ -103,7 +108,7 @@ export default {
       activateFunctions[2] = this.showHomeMap;
       activateFunctions[3] = this.showOriginSankey;
       activateFunctions[4] = this.showCirclePacking;
-      activateFunctions[5] = this.showTitle;
+      activateFunctions[5] = this.showRadarChart;
       activateFunctions[6] = this.showTitle;
   },
   methods:{
@@ -155,6 +160,7 @@ export default {
       },
       showRadarChart(){
           this.comName = "RadarChart";
+          // this.$refs.myviz.transRadarChart(data);
       },
   }
 }
@@ -188,7 +194,7 @@ export default {
     margin-left: 2%;
 
     height: 600px;
-    width: 600px;
+    width: 70%;
     /* background-color: #ddd; */
 }
 /* 组件过渡样式
