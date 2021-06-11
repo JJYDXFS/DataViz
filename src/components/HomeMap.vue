@@ -212,12 +212,12 @@ export default defineComponent({
                 .attr("offset", "100%")
                 .attr("stop-color", "#ffffff")
                 .attr("stop-opacity", 1);
-            // [width*0.7, height*0.66]
+            
             map_group.append("rect")
-                .attr("width", legend_w - 30)
-                .attr("height", legend_h)
+                .attr("transform", `translate(${width*0.87},${height*0.2})`)
                 .style("fill", "url(#gradient)")
-                .attr("transform", `translate(${width*0.87},${height*0.2})`);
+                .attr("height", legend_h)
+                .attr("width", legend_w - 30);
 
             var y = d3.scaleLinear()
                 .range([300, 0])
