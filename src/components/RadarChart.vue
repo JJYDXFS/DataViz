@@ -4,7 +4,12 @@
 
         </div>
         <div id="intro">
-            个人简介
+            <h2 style="text-align:center;"> {{detail.name}} </h2>
+            <p class="detail center">出任首辅{{detail.times}}次</p>
+            <p class="detail center">任期总时长{{detail.scale}}年</p>
+            <p class="info">
+                {{detail.info}}
+            </p>
         </div>
     </div>
 </template>
@@ -32,6 +37,15 @@ export default defineComponent({
         const width = w_width*0.87 - margin.left - margin.right;
         const height = w_height*0.9 - margin.top - margin.bottom;
 
+        var detail = ref({
+                name: "曹鼐",
+                scale: 3.09,
+                begin_age: 44,
+                age: 48,
+                times: 1,
+                info: "曹鼐（1402年－1449年9月1日），字万钟，号恒山。北直隶宁晋（今河北宁晋）人。明朝初年名臣。曹鼐自少为人豪爽，有大志，博览群书。宣德元年（1426年），中乡试第二，任代州训导，改派江西泰和县典史。明宣宗宣德八年（1433年）成癸丑科一甲第一名进士（状元），初授翰林院修撰。正统元年（1436年），充经筵讲官。正统五年（1440年），因杨荣、杨士奇举荐，进入文渊阁，参预机务。于正统十二年至正统十四年间（1447年－1449年）为内阁首辅，累官至吏部左侍郎兼翰林学士。正统十四年（1449年），曹鼐随英宗亲征，于土木之变中殉难。明代宗继位后，追赠荣禄大夫、少傅、吏部尚书兼文渊阁大学士，谥号“文襄”。英宗复位，加赠太傅，改谥“文忠”。"
+        });
+
         const radarChartOptions = {
 			w: 290,
 			h: 350,
@@ -41,11 +55,11 @@ export default defineComponent({
 			roundStrokes: false,
 			color: d3.scaleOrdinal().range(["#3366CC", "#FF9966"]),
 			format: '.2f',
-			legend: { title: '与平均值对比情况', translateX: 100, translateY: 40 },
+			legend: { title: '与平均值对比情况', translateX: 150, translateY: 43 },
 			unit: ''
 		};
         const initRadarChart = () => {
-            // 初始化信息
+            // 初始化信息，默认为姓名拼音序第一位-曹鼐
             let data = [
 				{ name: '该首辅个人信息',
 					axes: [
@@ -69,6 +83,8 @@ export default defineComponent({
         };
         const transRadarChart = (res) => {
             // 初始化信息
+            detail.value=res;
+
             let data = [
 				{ name: '该首辅个人信息',
 					axes: [
@@ -96,11 +112,12 @@ export default defineComponent({
             return {
             initRadarChart,
             transRadarChart,
+            detail,
         };
     },
     data() {
         return {
-            radar:null,
+            //radar:null,
         }
     },
 
@@ -116,5 +133,18 @@ export default defineComponent({
 
 #intro {
     float: left;
+    width: 35%;
+}
+
+.detail{
+    font-size: 16px;
+}
+
+.info{
+    font-size: 14px;
+}
+
+.center{
+    text-align: center;
 }
 </style>

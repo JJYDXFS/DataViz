@@ -137,8 +137,8 @@ const RadarChart = function RadarChart(parent_selector, data, options) {
 		.append("circle")
 		.attr("class", "gridCircle")
 		.attr("r", d => radius / cfg.levels * d)
-		.style("fill", "#CDCDCD")
-		.style("stroke", "#CDCDCD")
+		.style("fill", "#D2D2D2")
+		.style("stroke", "#D2D2D2")
 		.style("fill-opacity", cfg.opacityCircles)
 		.style("filter" , "url(#glow)");
 
@@ -177,9 +177,10 @@ const RadarChart = function RadarChart(parent_selector, data, options) {
 	//Append the labels at each axis
 	axis.append("text")
 		.attr("class", "legend")
-		.style("font-size", "11px")
+		.style("font-size", "14px")
 		.attr("text-anchor", "middle")
-		.attr("dy", "0.35em")
+		.attr("dy", "0.2em")
+		.attr("dx", "1.5em")
 		.attr("x", (d,i) => rScale(maxValue * cfg.labelFactor) * cos(angleSlice * i - HALF_PI))
 		.attr("y", (d,i) => rScale(maxValue * cfg.labelFactor) * sin(angleSlice * i - HALF_PI))
 		.text(d => d)
@@ -329,7 +330,7 @@ const RadarChart = function RadarChart(parent_selector, data, options) {
 		  .append("text")
 		  .attr("x", cfg.w - 52)
 		  .attr("y", (d,i) => i * 20 + 9)
-		  .attr("font-size", "11px")
+		  .attr("font-size", "12px")
 		  .attr("fill", "#737373")
 		  .text(d => d);
 	}

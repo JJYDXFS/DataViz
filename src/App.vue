@@ -160,7 +160,6 @@ export default {
       },
       showRadarChart(){
           this.comName = "RadarChart";
-          // this.$refs.myviz.transRadarChart(data);
       },
   }
 }

@@ -41,6 +41,19 @@ def get_pm_info():
         "info":"暂无"
     }
 
+    cursor = db.cursor()
+
+    sql="""
+    select info
+    from detail_info
+    where detail_info.name = "{}";
+    """.format(name)
+
+    cursor.execute(sql)
+    data = cursor.fetchall()[0]
+
+    result["info"] = data[0]
+
     db.close()
 
     return json.dumps({'result':result},ensure_ascii=False)
