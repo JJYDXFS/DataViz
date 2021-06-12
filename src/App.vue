@@ -2,7 +2,7 @@
   <div id="graphic">
         <div id="sections">
             <section class="step">
-                <div class="title" >Part1 介绍</div>
+                <div class="title " >Part1 介绍</div>
                 这一部分将放置一些关于 “首辅是什么” 的介绍<br/><br/>以及本作品的创作动机和意义
             </section>
             <section class="step">
@@ -69,6 +69,7 @@ import HomeMap from './components/HomeMap.vue'
 import OriginSankey from './components/OriginSankey.vue'
 import CirclePacking from './components/CirclePacking.vue'
 import RadarChart from './components/RadarChart.vue'
+import ChessChart from './components/ChessChart.vue'
 
 import InputWithSug from './components/InputWithSug.vue'
 
@@ -87,6 +88,7 @@ export default {
     HomeMap,
     OriginSankey,
     CirclePacking,
+    ChessChart,
     RadarChart,
     InputWithSug,
     // Wordcloud
@@ -112,7 +114,7 @@ export default {
       activateFunctions[2] = this.showHomeMap;
       activateFunctions[3] = this.showOriginSankey;
       activateFunctions[4] = this.showCirclePacking;
-      activateFunctions[5] = this.showTitle;
+      activateFunctions[5] = this.showChessChart;
       activateFunctions[6] = this.showRadarChart;
       activateFunctions[7] = this.showTitle;
   },
@@ -162,6 +164,9 @@ export default {
       },
       showCirclePacking(){
           this.comName = "CirclePacking";
+      },
+      showChessChart(){
+          this.comName = "ChessChart";
       },
       showRadarChart(){
           this.comName = "RadarChart";

@@ -7,7 +7,7 @@
             <h2 style="text-align:center;"> {{detail.name}} </h2>
             <p class="detail center">出任首辅{{detail.times}}次</p>
             <p class="detail center">任期总时长{{detail.scale}}年</p>
-            <p class="info">
+            <p class="detail info">
                 {{detail.info}}
             </p>
         </div>
