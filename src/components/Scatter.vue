@@ -159,10 +159,12 @@ export default defineComponent({
             // Y axis label:
             svg.append("text")
                 .attr("text-anchor", "end")
-                .attr("transform", "rotate(-90)")
-                .attr("y", -margin.left+40)
-                .attr("x", -margin.top+10)
+                //.attr("transform", "rotate(-90)")
+                .attr("y", -margin.left+130)
+                .attr("x", -margin.top+25)
                 .text("在任时长（年）")
+                .attr("font-size","14px")
+                .attr("writing-mode","tb-rl")   // 文字竖排
 
             // tooltip
             var scatter_tooltip = d3.select("#my_scatter")

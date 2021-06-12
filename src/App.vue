@@ -39,12 +39,16 @@
                 而历代文官谥号之最莫过于“文正”，相传李东阳在得知自己的谥号会被定为文正后，激动地从病榻起身开始磕头
             </section>
             <section class="step">
-                <div class="title" >Part 6 简介雷达图示例</div>
+                <div class="title" >Part 6 党争棋盘图</div>
+                东林党与阉党
+            </section>
+            <section class="step">
+                <div class="title" >Part 7 简介雷达图示例</div>
                 <InputWithSug/>
             </section>
             <section class="step">
-                <div class="title" >Part 6</div>
-                Hello, section five?
+                <div class="title" >Part 8 后记</div>
+                暂时空白，等待最后填充一些参考资料
             </section>
         </div>
         <div id="vis">
@@ -108,8 +112,9 @@ export default {
       activateFunctions[2] = this.showHomeMap;
       activateFunctions[3] = this.showOriginSankey;
       activateFunctions[4] = this.showCirclePacking;
-      activateFunctions[5] = this.showRadarChart;
-      activateFunctions[6] = this.showTitle;
+      activateFunctions[5] = this.showTitle;
+      activateFunctions[6] = this.showRadarChart;
+      activateFunctions[7] = this.showTitle;
   },
   methods:{
       initScroller(){
