@@ -13,11 +13,14 @@ export default defineComponent({
     return {}
   },
   mounted(){
-    this.drawChessChart();
+    var chess=this;
+    d3.json("./data/chess.json").then(function(data) {
+        chess.drawChessChart(data);
+    });
   },
 
   methods:{
-    drawChessChart() {
+    drawChessChart(data) {
         // 有关svg的数据
         /* 常量
         ---------------------------------------------------------------------------------------------------*/
@@ -39,50 +42,87 @@ export default defineComponent({
             .append("svg")
                 .attr("width", width + margin.left + margin.right)
                 .attr("height", height + margin.top + margin.bottom);
+        // 交互事件
+        // 交互事件
+        var mouseover = function(event,d) {
+            // scatter_tooltip.style("opacity", 1);
+            console.log(d);
+            d3.select(this).attr("stroke-width","4px");
+        }
+    
+        var mousemove = function(event,d) {
+            let point_this = this;
+            let point_cx = d3.select(point_this).attr("cx");
 
+            scatter_tooltip
+            .html(d.name+" "+"<br/>"+d.begin_title+"<br/>"+"在任时长："+d.scale+"年")
+            .style("left", function(d){
+                    
+                if(point_cx < (width-120)){
+                    return (d3.pointer(event,point_this)[0]+30) + "px"
+                }
+                else {
+                    return (d3.pointer(event,point_this)[0]-160) + "px"
+                }
+                    
+            }) // 90是最佳实践
+            .style("top", (d3.pointer(event,this)[1]) + "px")
+        }
+            
+        var mouseleave = function(event,d) {
+            d3.select(this).attr("stroke-width","2px");
+        }
+        // 棋盘背景
         var bg = svg.append("image").attr("id","bg");
         bg.attr("x",150)
         .attr("y",0)
         .attr("width",chess_length)
         .attr("xlink:href","img/chess_bg.png");
+        // 绘制棋子
+        var img_w=50;
+        var radius=chess_length*0.125*0.35;
+        var left_boundry = 202;
+        var top_boundry = 40;
+        var dxy=chess_length*0.095;
 
-        var c1=svg.append("circle")
-        .attr("id","test")
-        .attr("cx",202)
-        .attr("cy",chess_length*0.445)
-        .attr("stroke","#0066CC")
-        .attr("stroke-width","3px")
-        .attr("r",chess_length*0.125*0.35)
-        .attr("fill", function(){
-            var defs = svg.append("defs").attr("id","imgdefs");
-            var testpattern = defs.append("pattern")
-                .attr("id","testpattern")
-                .attr("height",1)
-                .attr("width",1);
-            testpattern.append("image")
-                .attr("x", -(25-30+5.8))
-                .attr("y", -(25-30+5.8))
-                .attr("width",60)
-                .attr("xlink:href","img/顾宪成.jpg")
+        var chessman=svg.selectAll("chessman")
+            .data(data)
+            .enter()
+            .append("circle")
+                .attr("cx",function(d){
+                    if(d.pos_x<5){
+                        return left_boundry+d.pos_x*dxy;
+                    }
+                    return left_boundry+d.pos_x*(dxy*0.99);
+                })
+                .attr("cy",d=>(top_boundry+d.pos_y*dxy))
+                .attr("stroke",function(d){
+                    if(d.isPM == 1){
+                        return "#FFFF00";
+                    }
+                    return "#0066CC";
+                })
+                .attr("stroke-width","2px")
+                .attr("r",radius)
+                .attr("fill", function(d,i){
+                    var defs = svg.append("defs").attr("id","imgdefs");
+                    var testpattern = defs.append("pattern")
+                        .attr("id","chesspattern"+i)
+                        .attr("height",1)
+                        .attr("width",1);
+                    testpattern.append("image")
+                        .attr("x", -(img_w/2-radius+5.8))
+                        .attr("y", -(img_w/2-radius+5.8))
+                        .attr("width",60)
+                        .attr("xlink:href",`img/${d.name}.jpg`)
+                    
+                    return "url(#chesspattern"+i+")";
+                });
+
+        chessman.on("mouseover", mouseover)
+            .on("mouseleave", mouseleave);
+
             
-            return "url(#testpattern)";
-        })
-
-
-
-        // var bg = svg.append("rect").attr("id","bg")
-        // var defs = svg.append("defs").attr("id","imgdefs");
-        // var bgpattern = defs.append("pattern")
-        //     .attr("id","bgpattern")
-        //     .attr("height",height)
-        //     .attr("width",width);
-        // bgpattern.append("image")
-        //     .attr("x", 200)
-        //     .attr("y", 200)
-        //     .attr("width",width)
-        //     .attr("height",height)
-        //     .attr("xlink:href","img/chess_bg.png")
-        //     .attr("clip-path","url(#bg)");
     }
   }
 
