@@ -75,10 +75,15 @@ export default defineComponent({
                 {"time":"1521-01-01","title":"嘉靖"},
                 {"time":"1566-01-01","title":"隆庆"},
                 {"time":"1572-01-01","title":"万历"},
-                {"time":"1620-01-01","title":"(泰昌)天启"},
+                {"time":"1620-01-01","title":"天启"},   
                 {"time":"1627-01-01","title":"崇祯"},
                 {"time":"1644-03-01","title":"明亡"}
             ];
+            // 年号与时间映射
+            var time_title_map={"1402":"永乐","1425":"仁宣","1435":"正统",
+                "1449":"景泰","1457":"天顺","1464":"成化","1487":"弘治",
+                "1505":"正德","1521":"嘉靖","1566":"隆庆","1572":"万历",
+                "1620":"天启","1627":"崇祯","1644":"明亡"}; // (泰昌)天启
             // x轴刻度
             var xAxis_tick=[];
             // 需要提前定义的全局变量&处理函数
@@ -126,7 +131,10 @@ export default defineComponent({
                 .attr("transform", "translate(0," + height + ")")
                 .call(d3.axisBottom(x)
                         .tickValues(xAxis_tick)
-                        .tickFormat(FormatYear)
+                        .tickFormat(function(d){
+                            // console.log(time_title_map[FormatYear(d)]);
+                            return time_title_map[FormatYear(d)];
+                        })
                         .tickSize(8))
                 .selectAll("text")	
                     .style("text-anchor", "end")
