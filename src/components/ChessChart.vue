@@ -105,10 +105,10 @@ export default defineComponent({
                 })
                 .attr("cy",d=>(top_boundry+d.pos_y*dxy))
                 .attr("stroke",function(d){
-                    if(d.isPM == 1){
-                        return "#FFFF00";
+                    if(d.party == 1){
+                        return "#c3272b";
                     }
-                    return "#0066CC";
+                    return "#000000";
                 })
                 .attr("stroke-width","2px")
                 .attr("fill", function(d,i){
