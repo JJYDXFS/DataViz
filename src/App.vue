@@ -70,6 +70,7 @@ import OriginSankey from './components/OriginSankey.vue'
 import CirclePacking from './components/CirclePacking.vue'
 import RadarChart from './components/RadarChart.vue'
 import ChessChart from './components/ChessChart.vue'
+import ChessChart3d from './components/ChessChart3d.vue'
 
 import InputWithSug from './components/InputWithSug.vue'
 
@@ -89,6 +90,7 @@ export default {
     OriginSankey,
     CirclePacking,
     ChessChart,
+    ChessChart3d,
     RadarChart,
     InputWithSug,
     // Wordcloud
@@ -115,8 +117,9 @@ export default {
       activateFunctions[3] = this.showOriginSankey;
       activateFunctions[4] = this.showCirclePacking;
       activateFunctions[5] = this.showChessChart;
-      activateFunctions[6] = this.showRadarChart;
-      activateFunctions[7] = this.showTitle;
+      activateFunctions[6] = this.showChessChart3d;
+      activateFunctions[7] = this.showRadarChart;
+      activateFunctions[8] = this.showTitle;
   },
   methods:{
       initScroller(){
@@ -167,6 +170,9 @@ export default {
       },
       showChessChart(){
           this.comName = "ChessChart";
+      },
+      showChessChart3d(){
+          this.comName = "ChessChart3d";
       },
       showRadarChart(){
           this.comName = "RadarChart";
