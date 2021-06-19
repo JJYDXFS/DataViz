@@ -60,6 +60,7 @@
             </transition>
         </div>
     </div>
+  <footer style="text-align: center;">Copyright © 2021 章颖 傅苏知雨. All Rights Reserved</footer>
 </template>
 
 <script>
@@ -74,6 +75,7 @@ import CirclePacking from './components/CirclePacking.vue'
 import RadarChart from './components/RadarChart.vue'
 import ChessChart from './components/ChessChart.vue'
 import ChessChart3d from './components/ChessChart3d.vue'
+import Ending from './components/Ending.vue'
 
 import InputWithSug from './components/InputWithSug.vue'
 
@@ -96,7 +98,7 @@ export default {
     ChessChart3d,
     RadarChart,
     InputWithSug,
-    // Wordcloud
+    Ending,
   },
   data(){
     // 定义激活函数列表
@@ -121,7 +123,7 @@ export default {
       activateFunctions[4] = this.showCirclePacking;
       activateFunctions[5] = this.showChessChart3d;
       activateFunctions[6] = this.showRadarChart;
-      activateFunctions[7] = this.showTitle;
+      activateFunctions[7] = this.showEnding;
   },
   methods:{
       initScroller(){
@@ -179,6 +181,9 @@ export default {
       showRadarChart(){
           this.comName = "RadarChart";
       },
+      showEnding(){
+          this.comName = "Ending";
+      },
   }
 }
 </script>
@@ -192,6 +197,7 @@ export default {
     z-index: 90;
     margin-left: 5%;
     font-size: 16px;
+    padding-bottom: 230px;
 }
 
 .step{
