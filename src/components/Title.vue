@@ -43,16 +43,32 @@ export default defineComponent({
              "translate(" + margin.left + "," + margin.top + ")");
       // 绘制标题
       svg.append('text')
-            .attr('class', 'title')
+            .attr('class', 'title typing')
             .attr('x', width / 2)
             .attr('y', height / 3)
             .text('大明首辅');
     
       svg.append('text')
-            .attr('class', 'sub-title')
+            .attr('class', 'sub-title typing')
             .attr('x', width / 2)
-            .attr('y', (height / 3) + (height / 5))
+            .attr('y', (height / 3) + (height / 4))
             .text('观察录');
+      // 进度条动画
+      var rects = svg.append("rect")
+					.attr("class", "bar")
+          .attr("x", width*0.3)
+					.attr("y", height * 0.85);
+					
+			rects.attr("height", 20)
+					.transition()
+					.duration(5000)
+					.attr("width", width*0.43);
+
+      var mytext = svg.append("text")
+					.attr("class", "typing")
+          .attr("x", width*0.45)
+					.attr("y", height * 0.825)
+          .text("观察进度载入中...")
     }
   }
 
@@ -68,5 +84,13 @@ export default defineComponent({
 #my_title .sub-title {
   font-size:80px;
   text-anchor: middle;
+}
+
+.bar{
+  fill:rgb(43, 106, 132);
+}
+
+.text{
+  font-size: 16px;
 }
 </style>

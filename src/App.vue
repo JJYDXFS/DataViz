@@ -2,11 +2,11 @@
   <div id="graphic">
         <div id="sections">
             <section class="step">
-                <div class="title " >Part1 介绍</div>
+                <div class="title " >Part1 大明首辅</div>
                 这一部分将放置一些关于 “首辅是什么” 的介绍<br/><br/>以及本作品的创作动机和意义
             </section>
             <section class="step">
-                <div class="title" >Part2 散点图展开</div>
+                <div class="title" >Part2 历任首辅一览</div>
                 我们整理了从黄淮到魏藻德在内的87任、共67位首辅<br/>
                 右侧是时间散点图<br/>
                 横轴刻度代表了皇权更替的时间点<br/>
@@ -16,14 +16,14 @@
                 说明这可能是一位两朝元老哦
             </section>
             <section class="step">
-                <div class="title" >Part3 动态地图</div>
+                <div class="title" >Part3 首辅们从哪来？</div>
                 那么有明一代的首辅们都来自哪里呢？右侧是自永乐朝始，历代首辅的籍贯。
                 等动画加载完成后，移动到感兴趣的省份上查看那里出身的首辅吧<br/>
                 根据我们的统计，“贡献”首辅最多的是江西省和浙江省<br/>
                 各出了10位首辅大人
             </section>
             <section class="step">
-                <div class="title" >Part4 学历桑基图</div>
+                <div class="title" >Part4 “学霸”的世界</div>
                 首辅作为明代文官之路的巅峰，是“学而优则仕”的最佳体现<br/>
                 在明代，科举制度自下而上分为三层<br/>
                 通过殿试的考生将依名次被分别授予<br/>
@@ -33,21 +33,24 @@
                 二甲赐进士出身，三甲赐同进士出身<br/>
             </section>
             <section class="step">
-                <div class="title" >Part 5 谥号树图</div>
+                <div class="title" >Part5 盖棺定论</div>
                 干得好的首辅在死后将会得到来自朝廷的感谢——谥号<br/>
                 明代的首辅大都能得到以“文”字打头的谥号<br/>
                 而历代文官谥号之最莫过于“文正”，相传李东阳在得知自己的谥号会被定为文正后，激动地从病榻起身开始磕头
             </section>
             <section class="step">
-                <div class="title" >Part 6 党争棋盘图</div>
+                <div class="title" >Part6 党争之祸</div>
+                <button class="switch-button" @click="showChessChart3d()">3D棋盘</button>
+                <button class="switch-button" @click="showChessChart()">2D棋盘</button>
+                <br/>
                 东林党与阉党
             </section>
             <section class="step">
-                <div class="title" >Part 7 简介雷达图示例</div>
+                <div class="title" >Part7 首辅详情</div>
                 <InputWithSug/>
             </section>
             <section class="step">
-                <div class="title" >Part 8 后记</div>
+                <div class="title" >Part 8 写在后面的话</div>
                 暂时空白，等待最后填充一些参考资料
             </section>
         </div>
@@ -116,10 +119,9 @@ export default {
       activateFunctions[2] = this.showHomeMap;
       activateFunctions[3] = this.showOriginSankey;
       activateFunctions[4] = this.showCirclePacking;
-      activateFunctions[5] = this.showChessChart;
-      activateFunctions[6] = this.showChessChart3d;
-      activateFunctions[7] = this.showRadarChart;
-      activateFunctions[8] = this.showTitle;
+      activateFunctions[5] = this.showChessChart3d;
+      activateFunctions[6] = this.showRadarChart;
+      activateFunctions[7] = this.showTitle;
   },
   methods:{
       initScroller(){
@@ -199,6 +201,20 @@ export default {
 .title{
     font-size: large;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+.switch-button{
+    background-color: #4f9ed3;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    cursor: pointer;
 }
 
 #vis{

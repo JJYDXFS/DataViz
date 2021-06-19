@@ -62,7 +62,7 @@ export default defineComponent({
             let point_this = this;
             let point_cx = d3.select(point_this).attr("cx");
             let point_cy = d3.select(point_this).attr("cy");
-            console.log(this);
+            // console.log(this);
             chess_tooltip
                 .html(d.name+" "+"<br/>"+d.info)
                 .style("left", function(d){

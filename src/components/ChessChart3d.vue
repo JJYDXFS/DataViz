@@ -8,6 +8,7 @@
 import { defineComponent } from "vue";
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+// import { objectSelection } from '../js/objSelection.js';
 import * as d3 from 'd3';
 
 export default defineComponent({
@@ -38,7 +39,6 @@ export default defineComponent({
         var canWidth = width*0.87 - margin.left - margin.right;
         var canHeight = height*0.9 - margin.top - margin.bottom;
 
-        // THREE.ObjectSelection = objectSelection;
         // 初始化div/scene/camera/renderer
         var threeDiv = document.getElementById('canvas-frame');
         var scene = new THREE.Scene();
@@ -50,12 +50,12 @@ export default defineComponent({
         renderer.setSize(canWidth, canHeight);
         // 把renderer加入页面
         threeDiv.appendChild(renderer.domElement);
-
+        // 加载材质的函数
         var getTexture = function(str){
             var loader = new THREE.TextureLoader();
             return loader.load(str);
         }
-
+        // 绘制立体图形
         // 棋盘
         var geometry = new THREE.BoxGeometry(450,10,400);
 
@@ -66,17 +66,10 @@ export default defineComponent({
         });
 
         var cube = new THREE.Mesh(geometry, material);
-        scene.add(cube);    // 把几何体加入场景
+        scene.add(cube);
 
         // 棋子
-        console.log(data);
-        // var chess = new THREE.CylinderGeometry(20, 20, 10, 25);
 
-        // var material_c1 = new THREE.MeshBasicMaterial({
-        //     color: 0xffffff,
-        //     map: getTexture('img/'++'.jpg'),
-        //     wireframe: false
-        // });
         var chess = new Array();
         var chess_material = new Array();
         var r_chess = new Array();
@@ -97,8 +90,8 @@ export default defineComponent({
             else{
                 r_chess[i].position.set(data[i].pos_x*45-215,10,data[i].pos_y*45-180);
             }
-            
-            scene.add(r_chess[i]);    // 把几何体加入场景
+
+            scene.add(r_chess[i]);
         }
 
         // 打光
@@ -111,34 +104,26 @@ export default defineComponent({
         controls.autoRotate = true;   // 自动旋转
         controls.enableZoom = true;
         scene.controls = controls;
+        // 设置相机视角
+        camera.position.set( 250, 120, 250 );
 
-        camera.position.set( 300, 150, 300 );
-        // controls.update();
-
-
+        // 参考平面
         var initGrid = function() {
-            // 平面
             var gridXZ = new THREE.GridHelper(500, 10, 0xa23131, 0xa23131);//4个参数分别是：网格宽度、等分数、中心线颜色，网格线颜色
             gridXZ.position.set(25,0,50);
             gridXZ.material.linewidth = 10;
             scene.add(gridXZ);
         }
+        // 渲染函数
         var render = function (){
             // 使用控制器
             scene.controls.update();
             renderer.render(scene, camera);
             requestAnimationFrame(render);
         }
-
         // initGrid();
         render();
 
-        // var object_selection;
-        // initGrid();
-        // initObject();
-        // layout();
-        // ObjectSelection();
-        // render();
     }
   }
 
@@ -159,6 +144,10 @@ div.chess_tooltip {
     border-radius: 8px;			
     pointer-events: none;
     text-shadow: #fff 0.8px 0 0, #fff 0 0.8px 0, #fff -0.8px 0 0, #fff 0 -0.8px 0;	
+}
+
+#canvas-frame {
+    position:absolute;
 }
 
 #interaction{
