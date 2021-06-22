@@ -10,7 +10,10 @@
             </section>
             <section class="step">
                 <div class="title" >Part2 历任首辅一览</div>
-                我们依照清代张廷玉所编《明史·宰辅年表》整理了从黄淮到魏藻德在内的87任、共67位大明首辅<br/>
+                我们依照清代张廷玉所编
+                <a href="https://baike.baidu.com/reference/1080773/6711rzSlvDTwa92ek81yVUJZsicKrw3IZPQ2JgH_3_jbyT4A9gfaYurn9RmjrqHP1_ONFgsY8ZunIzsvZ_Xv8WcVxNfsstCq7WG3aDUA" target="_blank" >
+                《明史·宰辅年表》</a>
+                整理了从黄淮到魏藻德在内的87任、共67位大明首辅<br/>
                 右侧的散点图按时间顺序将每位首辅绘成一个点，同代的首辅颜色相同。将鼠标移入点内，可以查看首辅的姓名和上任时间<br/>
                 从散点图中可以看出一个有趣的现象，首辅扎堆的年代总是多事之秋......
             </section>
@@ -18,30 +21,33 @@
                 <div class="title" >Part3 首辅们从哪来？</div>
                 跟首辅们打过初次照面后，让我们再来“查个户口”：明代的首辅都是哪的人呢？<br/>
                 右侧的地图展现了自永乐朝始，首辅们的籍贯来源<br/>
-                等动画加载完成后，移动到感兴趣的省份查看那里出身的首辅吧，或许还能找到几个老乡呢<br/>
+                等动画加载完成后，移动到感兴趣的省份查看那里出身的首辅吧，或许你还能找到几个老乡呢<br/>
                 PS：这里就不得不提一下出了6位首辅的江西吉安府，既有主持编写了《永乐大典》的才子解缙，又有明代续航时间最长的首辅杨士奇
             </section>
             <section class="step">
                 <div class="title" >Part4 “学霸”的世界</div>
                 首辅作为明代文官之路的巅峰，是“学而优则仕”的最佳体现<br/>
-                在明代，<a href="https://baike.baidu.com/item/%E7%A7%91%E4%B8%BE%E5%88%B6%E5%BA%A6/278041?fr=aladdin#1">科举制度</a>自下而上可大致分为乡试、会试、殿试三层。
-                通过殿试的考生按名次被授予一甲/二甲/三甲出身。一甲只有三人，是人们熟知的状元/榜眼/探花，二甲进士和三甲同进士人数则较多，共有二三百人<br/>
-                能成为首辅自然是优中选优，右侧的桑基图展现了历代首辅的学历分布。可以看出，状元不管在哪朝哪代都很吃香嘛<br/>
-                唯一的那位布衣翰林也是我们的老熟人了：杨士奇
+                在明代，<a href="https://baike.baidu.com/item/%E7%A7%91%E4%B8%BE%E5%88%B6%E5%BA%A6/278041?fr=aladdin#1" target="_blank" >科举制度</a>自下而上可大致分为乡试、会试、殿试三层。
+                通过殿试的考生按名次被授予一甲/二甲/三甲出身<br/>
+                一甲只有三人，是人们熟知的状元/榜眼/探花。二甲进士和三甲同进士人数则较多，共有二三百人<br/>
+                能成为首辅自然是优中选优，右侧的桑基图展现了历代首辅的学历分布。可以看出，状元不管在哪朝哪代都很吃香<br/>
+                唯一的那位布衣翰林也是我们的老熟人了：杨士奇杨阁老
             </section>
             <section class="step">
                 <div class="title" >Part5 盖棺定论</div>
-                问汝平生功业，自有旁人说短长。谥号是古人死后，后人按其生平事迹给定的概括性评价。
-                明代的首辅只要不出大差错，基本都能得到“文”这一美谥<a href="https://ctext.org/lost-book-of-zhou/shi-fa/zh">《逸周书·谥法解》</a><br/>
+                问汝平生功业，自有旁人说短长。谥号是古人死后，后人按其生平事迹给定的概括性评价<br/>
+                明代的首辅只要不出大差错，基本都能得到“文”这一美谥<a href="https://ctext.org/lost-book-of-zhou/shi-fa/zh" target="_blank" >&nbsp;参见《逸周书·谥法解》</a><br/>
                 “文正”是历代文人梦寐以求的谥号，明代首辅唯有李东阳得此殊荣。
-                相传李东阳死前，好友杨一清前来探望，透露朝廷将给他文正的谥号。李东阳听罢竟起身在床上向杨磕了一个头
+                相传李东阳死前，好友杨一清前来探望，并告知他朝廷将授予他“文正”的谥号。李东阳听罢竟起身在床上向杨磕了一个头
             </section>
             <section class="step">
                 <div class="title" >Part6 党争之祸</div>
+                明中后期朝堂各党派之间争权夺利、纷争不断，党争失衡可以说是加速明亡的动因之一。其中尤以
+                <br/>
                 <button class="switch-button" @click="showChessChart3d()">3D棋盘</button>
                 <button class="switch-button" @click="showChessChart()">2D棋盘</button>
-                <br/>
-                东林党与阉党
+                
+                
             </section>
             <section class="step">
                 <div class="title" >Part7 首辅详情</div>
@@ -186,10 +192,10 @@ export default {
 #sections{
     position: relative;
     display: inline-block;
-    width: 17%;
+    width: 18%;
     top: 0px;
     z-index: 90;
-    margin-left: 5%;
+    margin-left: 4%;
     font-size: 18px;
     padding-bottom: 230px;
 }
@@ -202,10 +208,11 @@ export default {
 .title{
     font-size: large;
     font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 10px;
 }
 
 .switch-button{
-    background-color: #4f9ed3;
+    background-color: #4298d1b0;
     border: none;
     border-radius: 6px;
     color: white;
@@ -214,7 +221,7 @@ export default {
     text-decoration: none;
     display: inline-block;
     font-size: 18px;
-    margin: 4px 2px;
+    margin: 8px 4px;
     cursor: pointer;
 }
 
@@ -239,5 +246,25 @@ export default {
         
 .v-enter-active,.v-leave-active{
     transition: all 0.5s ease;
+}
+
+a:link{ /* 指正常的未被访问过的链接*/
+    text-decoration:none;
+    color:#697e93;
+}  
+
+a:visited{ /*指已经访问过的链接*/
+    text-decoration:none;
+    color:#697e93; 
+}
+
+a:hover{ /*指鼠标在链接*/
+    text-decoration:none;
+    color:#013a73;
+}
+
+a:active{ /* 指正在点的链接*/ 
+    text-decoration:none;
+    color:#697e93;
 }
 </style>
