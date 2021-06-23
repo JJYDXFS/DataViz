@@ -20,7 +20,7 @@ def get_pm_info():
 
     print(name)
 
-    db = pymysql.connect("8.131.66.184","JJYDXFS","618618","dviz" )
+    db = pymysql.connect(host="8.131.66.184",user="JJYDXFS",password="618618",database="dviz" )
     cursor = db.cursor()
 
     sql="""
