@@ -3,7 +3,6 @@
 <div id="input_box">
         <el-row class="demo-autocomplete">
         <el-col :span="15">
-            <div class="sub-title">通过姓名检索首辅</div>
             <el-autocomplete
             class="inline-input"
             v-model="state1"
@@ -81,7 +80,6 @@ export default defineComponent({
       querySearch,
       createFilter,
       loadAll,
-      //handleSelect,
     };
   },
 });
@@ -89,4 +87,9 @@ export default defineComponent({
 
 <style>
 @import 'element-theme-chalk';
+
+#input_box{
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
 </style>
