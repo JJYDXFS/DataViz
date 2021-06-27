@@ -18,7 +18,6 @@
 import { defineComponent, ref, onMounted } from 'vue'
 import * as d3 from 'd3';
 import { RadarChart } from '../js/radarChart.js'
-import axios from 'axios'
 
 export default defineComponent({
     setup() {
@@ -66,7 +65,6 @@ export default defineComponent({
                         {axis: '任期总长（年）', value: 3.09},
 						{axis: '首次上任年龄（5年）', value: 44/5},
 						{axis: '享年（5年）', value: 48/5},
-						//{axis: '出任首辅次数', value: 1}
 					]
 				},
 				{ name: '明代首辅平均值(61人)',
@@ -74,7 +72,6 @@ export default defineComponent({
                         {axis: '任期总长（年）', value: 3.60},
 						{axis: '首次上任年龄（5年）', value: 57.52/5},
 						{axis: '享年（5年）', value: 70.16/5},
-						//{axis: '出任首辅次数', value: 1.33}
 					]
 				}
 			];
@@ -91,7 +88,6 @@ export default defineComponent({
                         {axis: '任期总长（年）', value: res.scale},
 						{axis: '首次上任年龄（5年）', value: res.begin_age/5},
 						{axis: '享年（5年）', value: res.age/5},
-						//{axis: '出任首辅次数', value: 1}
 					]
 				},
 				{ name: '明代首辅平均值(61人)',
@@ -99,7 +95,6 @@ export default defineComponent({
                         {axis: '任期总长（年）', value: 3.60},
 						{axis: '首次上任年龄（5年）', value: 57.52/5},
 						{axis: '享年（5年）', value: 70.16/5},
-						//{axis: '出任首辅次数', value: 1.33}
 					]
 				}
 			];

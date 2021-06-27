@@ -46,6 +46,7 @@
                 万历天启年间，两党首辅轮番上任把持朝政。右侧棋盘图在楚河汉界两侧分别放置了两党的代表人物。切换2D棋盘，可以交互查看每颗棋子对应的人物介绍（红色为东林党，黑色为阉党）<br/>
                 <button class="switch-button" @click="showChessChart3d()">3D棋盘</button>
                 <button class="switch-button" @click="showChessChart()">2D棋盘</button>
+                <br/>
                 彼时阉党人士还仿照《水浒传》编写了
                 <a href="https://baike.baidu.com/item/%E4%B8%9C%E6%9E%97%E7%82%B9%E5%B0%86%E5%BD%95" target="_blank">《东林党点将录》</a>
                 ，颇可玩味
