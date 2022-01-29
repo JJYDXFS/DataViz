@@ -27,7 +27,7 @@ export default defineComponent({
   methods:{
     handleSelect (item) {
       var thisInstence = this;
-      axios.get("http://42.193.108.195:5000/api/get_pm_info",{params:{name:item.value}})
+      axios.get("http://www.joycez.xyz:4545/api/get_pm_info",{params:{name:item.value}})
                 .then((res) => {
                   thisInstence.$parent.$refs.myviz.transRadarChart(res['data']['result']);
       });
