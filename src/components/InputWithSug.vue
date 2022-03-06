@@ -1,4 +1,3 @@
-
 <template>
 <div id="input_box">
         <el-row class="demo-autocomplete">
