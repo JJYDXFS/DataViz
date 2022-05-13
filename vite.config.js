@@ -1,27 +1,9 @@
-// vue.config.js
-// https://www.cnblogs.com/wisewrong/p/13717287.html
-// export default {
-//     outputDir: 'dist', // 打包的目录
-//     lintOnSave: true, // 在保存时校验格式
-//     productionSourceMap: false, // 生产环境是否生成 SourceMap
-//     devServer: {
-//       open: true, // 启动服务后是否打开浏览器
-//       overlay: { // 错误信息展示到页面
-//         warnings: true,
-//         errors: true
-//       },
-//       host: '0.0.0.0',
-//       port: 1644, // 服务端口
-//       https: false,
-//       hotOnly: false,
-//       // proxy: { // 设置代理
-//       //   '/api': {
-//       //     target: host,
-//       //     changeOrigin: true,
-//       //     pathRewrite: {
-//       //       '/api': '/',
-//       //     }
-//       //   },
-//       // },
-//     },
-//   }
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [vue()],
+  base: '/',
+  assetsDir: 'assets',
+})

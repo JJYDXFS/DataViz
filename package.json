@@ -6,6 +6,7 @@
     "build": "vite build"
   },
   "dependencies": {
+    "@vitejs/plugin-vue": "^2.3.3",
     "axios": "^0.21.2",
     "d3": "^6.7.0",
     "d3-collection": "^1.0.7",
@@ -14,10 +15,10 @@
     "element-plus": "^1.0.2-beta.46",
     "element-theme-chalk": "^2.15.2",
     "three": "^0.129.0",
-    "vue": "^3.0.4"
+    "vue": "^3.2.33"
   },
   "devDependencies": {
     "@vue/compiler-sfc": "^3.0.4",
-    "vite": "^1.0.0-rc.13"
+    "vite": "^2.9.9"
   }
 }
