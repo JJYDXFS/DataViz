@@ -6,7 +6,7 @@
     "build": "vite build"
   },
   "dependencies": {
-    "axios": "^0.21.1",
+    "axios": "^0.21.2",
     "d3": "^6.7.0",
     "d3-collection": "^1.0.7",
     "d3-sankey": "^0.12.3",
