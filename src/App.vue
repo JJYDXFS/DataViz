@@ -75,7 +75,9 @@
             </transition>
         </div>
     </div>
-  <footer style="text-align: center;">Copyright © 2021 章颖 傅苏知雨. All Rights Reserved</footer>
+   <footer style="text-align: center;">
+   Copyright © 2021-2022 JJYDXFS × 复苏. All Rights Reserved
+   </footer>
 </template>
 
 <script>
