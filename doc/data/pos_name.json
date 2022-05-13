@@ -1,0 +1,163 @@
+{
+ "name": "谥号",
+ "children": [
+  {
+   "name":"未赐谥号",
+   "children":[
+         {"name":"严嵩", "value":1},
+         {"name":"刘宇亮", "value":1},
+         {"name":"周延儒", "value":1},
+         {"name":"张四知", "value":1},
+         {"name":"张至发", "value":1},
+         {"name":"徐有贞", "value":1},
+         {"name":"施凤来", "value":1},
+         {"name":"来宗道", "value":1},
+         {"name":"范复粹", "value":1},
+         {"name":"蒋德璟", "value":1},
+         {"name":"薛国观", "value":1},
+         {"name":"陈循", "value":1},
+         {"name":"陈演", "value":1},
+         {"name":"韩爌", "value":1},
+         {"name":"顾秉谦", "value":1},
+         {"name":"魏藻德", "value":1},
+         {"name":"黄立极", "value":1}
+   ]
+   },
+  {
+   "name": "其他谥号",
+   "children": [
+    {"name": "庄靖", "children":[{"name":"陈文", "value":1}]},
+    {"name": "襄敏", "children":[{"name":"许彬", "value":1}]}
+   ]
+  },
+  {
+   "name": "以文为谥",
+   "children": [
+   {"name": "文定",
+      "children":[
+         {"name":"李春芳", "value":1},
+         {"name":"杨溥", "value":1},
+         {"name":"申时行", "value":1},
+         {"name":"蒋冕", "value":1}
+      ]
+   },
+   {"name": "文宪",
+      "children":[
+         {"name":"彭时", "value":1},
+         {"name":"费宏", "value":1}
+      ]
+   },
+   {"name": "文康",
+      "children":[
+         {"name":"万安", "value":1},
+         {"name":"李时", "value":1},
+         {"name":"梁储", "value":1},
+         {"name":"顾鼎臣", "value":1}
+      ]
+   },
+   {"name": "文忠",
+      "children":[
+         {"name":"叶向高", "value":1},
+         {"name":"孔贞运", "value":1},
+         {"name":"张居正", "value":1},
+         {"name":"张璁", "value":1},
+         {"name":"曹鼐", "value":1},
+         {"name":"杨廷和", "value":1},
+         {"name":"温体仁", "value":1}
+      ]
+   },
+   {"name": "文恭",
+      "children":[
+         {"name":"沈一贯", "value":1}
+      ]
+   },
+   {"name": "文愍",
+      "children":[
+         {"name":"夏言", "value":1}
+      ]
+   },
+   {"name": "文懿", 
+      "children":[
+         {"name":"朱赓", "value":1},
+         {"name":"翟銮", "value":1},
+         {"name":"赵志皋", "value":1},
+         {"name":"高榖", "value":1}
+      ]
+   },
+   {"name": "文敏", 
+      "children":[
+         {"name":"李国", "value":1},
+         {"name":"杨荣", "value":1}
+      ]
+   },
+   {"name": "文正", 
+      "children":[
+         {"name":"李东阳", "value":1}
+      ]
+   },
+   {"name": "文毅", 
+      "children":[
+         {"name":"商辂", "value":1},
+         {"name":"张四维", "value":1},
+         {"name":"解缙", "value":1}
+      ]
+   },
+   {"name": "文穆", 
+      "children":[
+         {"name":"刘吉", "value":1},
+         {"name":"成基命", "value":1},
+         {"name":"胡广", "value":1}
+      ]
+    },
+   {"name": "文端", 
+      "children":[
+         {"name":"刘一燝", "value":1},
+         {"name":"方从哲", "value":1},
+         {"name":"王家屏", "value":1}
+      ]
+   },
+   {"name": "文简", 
+      "children":[
+         {"name":"毛纪", "value":1},
+         {"name":"黄淮", "value":1}
+      ]
+   },
+   {"name": "文肃", 
+      "children":[
+         {"name":"朱国祯", "value":1},
+         {"name":"王锡爵", "value":1}
+      ]
+   },
+   {"name": "文节", 
+      "children":[
+         {"name":"李廷机", "value":1},
+         {"name":"李标", "value":1}
+      ]
+   },
+   {"name": "文襄", 
+      "children":[
+         {"name":"杨一清", "value":1},
+         {"name":"高拱", "value":1}
+      ]
+   },
+   {"name": "文贞", 
+      "children":[
+         {"name":"徐阶", "value":1},
+         {"name":"杨士奇", "value":1}
+      ]
+   },
+   {"name": "文达", 
+      "children":[
+         {"name":"李贤", "value":1}
+      ]
+   },
+   {"name": "文靖", 
+      "children":[
+         {"name":"刘健", "value":1},
+         {"name":"徐溥", "value":1}
+      ]
+   }
+   ]
+  }
+ ]
+}
